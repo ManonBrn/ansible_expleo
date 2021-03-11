@@ -49,4 +49,14 @@
      - docker-ce-cli
      - containerd.io
 
-...
+  - name: install python-docker
+    apt:
+     name: python-docker
+     state: present
+
+  - name: httpd up
+    docker_container:
+     name: apache2
+     image: httpd
+     ports: "9000:80" 
+...  
